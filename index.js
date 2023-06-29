@@ -27,7 +27,6 @@ app.post('/convert', async (req, res) => {
       messages: codePrompt
     });
     const code = response.data.choices[0].message.content
- 
     res.json(code);
   } catch (error) {
     console.error(error);
@@ -74,7 +73,7 @@ app.post('/quality', async (req, res) => {
       messages: codePrompt
     });
     const code = response.data.choices[0].message.content
- 
+    console.log(code)
     res.json(code);
   } catch (error) {
     console.error(error);
