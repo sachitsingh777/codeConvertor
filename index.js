@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors=require("cors")
 const {  Configuration, OpenAIApi } = require('openai');
 require("dotenv").config()
 const app = express();
 app.use(bodyParser.json());
-
+app.use(cors())
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
   model: 'gpt-3.5-turbo',
